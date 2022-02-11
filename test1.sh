@@ -1,5 +1,6 @@
 #!/bin/sh
- 
+
+
 # Creates directory & download ADO agent install files
 cd /home/azureuser/
 mkdir myagent && cd myagent
@@ -9,8 +10,8 @@ tar zxvf vsts-agent-linux-x64-2.186.1.tar.gz
 # Unattended install
 ./config.sh --unattended \
   --agent "$(hostname)" \
-  --url "https://dev.azure.com/allymeer-hossen/" \
-  --auth PAT \
+  --url $1 \
+  --auth $2 \
   --token "lukspdn2imzgatakygjlix4ecypl76z67gytwzf4hd3ush6i24wq" \
   --pool "testing" \
   --replace \
